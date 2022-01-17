@@ -10,6 +10,10 @@ let package = Package(
         .library(
             name: "Binding",
             targets: ["Binding"]),
+        .library(
+            name: "Binding-Dynamic",
+            type: .dynamic,
+            targets: ["Binding"]),
     ],
     dependencies: [
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .exact("6.2.0"))
@@ -26,8 +30,6 @@ let package = Package(
             name: "BindingTests",
             dependencies: [
                 "Binding",
-                "RxSwift",
-                .product(name: "RxCocoa", package: "RxSwift"),
                 .product(name: "RxTest", package: "RxSwift")
             ]),
     ]
